@@ -1,0 +1,8 @@
+header {
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    /*@HACER test border */
+    border: solid pink thin;
+}

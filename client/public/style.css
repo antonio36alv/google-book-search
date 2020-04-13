@@ -1,0 +1,22 @@
+body {
+    width: 100%;
+}
+
+body, * {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin-top: 20px;
+    /* @HACER test border */
+    border: solid thick brown;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+main h2 {
+    text-align: center;
+}
