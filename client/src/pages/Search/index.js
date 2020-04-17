@@ -19,8 +19,20 @@ class Search extends Component {
 
     handleSave = async id => {
         console.log(id)
-        //save the book
+        
         saveBook(this.state.bookResults.filter(e => (e.id === id)))
+
+        // 
+        // const { items } = data.data
+        
+        //     for (let item of items) bookResults.push({
+            //         id: item.id,
+            //         title: item.volumeInfo.title,
+            //         authors: item.volumeInfo.authors,
+            //         description: item.volumeInfo.description,
+            //         imageLink: item.volumeInfo.imageLinks.thumbnail,
+            //         infoLink: item.volumeInfo.infoLink
+            //     })
 
     }
 
