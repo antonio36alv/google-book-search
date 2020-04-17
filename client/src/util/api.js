@@ -15,35 +15,26 @@ module.exports = {
         const { items } = data.data
 
             for (let item of items) bookResults.push({
+                id: item.id,
                 title: item.volumeInfo.title,
                 authors: item.volumeInfo.authors,
-                descritpion: item.description,
+                description: item.volumeInfo.description,
                 imageLink: item.volumeInfo.imageLinks.thumbnail,
                 infoLink: item.volumeInfo.infoLink
             })
         
         })
         return bookResults
+    },
+    savedBooks: () => {
+        return axios.get("/api/books")
+    },
+    saveBook: book => {
+        console.log(book)
+        console.log("saveBook")
+        return axios.post("/api/books", book)
+    },
+    removeBook: id => {
+        return axios.delete(`/api/books/${id}`)
     }
 }
-// function getBook(title) {
-//     const queryURL = `https://www.googleapis.com/books/v1/volumes?q=intitle=${title}+maxResults=4/&key=${API_KEY}`
-
-//     axios.get(queryURL).then(data => {
-
-//         console.log(data)
-//         const { items } = data.data
-
-//         for (let item of items) console.log(`${item.volumeInfo.title}
-
-// ${item.volumeInfo.authors}
-
-// ${item.volumeInfo.description}
-
-// ${item.volumeInfo.imageLinks.thumbnail}
-
-// ${item.volumeInfo.infoLink}`)
-// })
-// }
-
-// getBook("the+mist")
