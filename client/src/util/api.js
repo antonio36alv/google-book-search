@@ -8,6 +8,17 @@ module.exports = {
 console.log("hit get books")
         const queryURL = `https://www.googleapis.com/books/v1/volumes?q=intitle:${title}&maxResults=4&key=${API_KEY}`
 
+        axios.get(queryURL)
+        const { items } = data.data
+        
+        //     for (let item of items) bookResults.push({
+            //         id: item.id,
+            //         title: item.volumeInfo.title,
+            //         authors: item.volumeInfo.authors,
+            //         description: item.volumeInfo.description,
+            //         imageLink: item.volumeInfo.imageLinks.thumbnail,
+            //         infoLink: item.volumeInfo.infoLink
+            //     })
         return axios.get(queryURL)
     },
     savedBooks: () => {

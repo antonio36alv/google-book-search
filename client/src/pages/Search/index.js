@@ -37,12 +37,9 @@ class Search extends Component {
     }
 
     handleSearch = async () => {
-        let jawn = []
+        
 
-        getBooks(this.state.textValue).then(data => jawn = data).catch(err => console.log(err))
-
-        this.setState({ bookResults: jawn})
-
+        getBooks(this.state.textValue).then(data => this.setState({bookResults: data })).catch(err => console.log(err))
     }
     
     render = () => {
