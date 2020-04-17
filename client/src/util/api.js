@@ -7,24 +7,8 @@ module.exports = {
     getBooks: async title => {
 
         const queryURL = `https://www.googleapis.com/books/v1/volumes?q=intitle:${title}&maxResults=4&key=${API_KEY}`
-        
-        const bookResults = []
-        
-        await axios.get(queryURL).then(data => {
-        
-        const { items } = data.data
 
-            for (let item of items) bookResults.push({
-                id: item.id,
-                title: item.volumeInfo.title,
-                authors: item.volumeInfo.authors,
-                description: item.volumeInfo.description,
-                imageLink: item.volumeInfo.imageLinks.thumbnail,
-                infoLink: item.volumeInfo.infoLink
-            })
-        
-        })
-        return bookResults
+        return axios.get(queryURL)
     },
     savedBooks: () => {
         return axios.get("/api/books")

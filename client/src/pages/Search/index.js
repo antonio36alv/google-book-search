@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import "./style.css"
 import SearchBox from "../../components/SearchBox"
 import SearchResult from "../../components/SearchResult"
-import { getBooks, saveBook } from "../../../util/api"
+import { getBooks, saveBook } from "../../util/api"
  
 class Search extends Component {
 
