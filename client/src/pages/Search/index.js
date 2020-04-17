@@ -27,7 +27,7 @@ class Search extends Component {
     handleSearch = async () => {
         let jawn = []
 
-        await getBooks(this.state.textValue).then(data => jawn = data).catch(err => console.log(err))
+        getBooks(this.state.textValue).then(data => jawn = data).catch(err => console.log(err))
 
         this.setState({ bookResults: jawn})
 
