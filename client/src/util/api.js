@@ -4,7 +4,9 @@ const axios = require("axios")
 const API_KEY = "AIzaSyAEMCfRN2U2viwt_Btj_pVVyQ7EDUM-HA8"
 //https://www.googleapis.com/books/v1/volumes?q=intitle:harry+potter&maxResults=4&key= AIzaSyAEMCfRN2U2viwt_Btj_pVVyQ7EDUM-HA8
 module.exports = {
-    getBooks: async title => {
+
+
+    getBooks: title => {
 console.log("hit get books")
         const queryURL = `https://www.googleapis.com/books/v1/volumes?q=intitle:${title}&maxResults=4&key=${API_KEY}`
 
