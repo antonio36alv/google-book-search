@@ -8,7 +8,7 @@ module.exports = {
 console.log("hit get books")
         const queryURL = `https://www.googleapis.com/books/v1/volumes?q=intitle:${title}&maxResults=4&key=${API_KEY}`
 
-        axios.get(queryURL)
+        const data = axios.get(queryURL)
         const { items } = data.data
         
         //     for (let item of items) bookResults.push({
