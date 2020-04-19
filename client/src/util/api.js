@@ -33,5 +33,6 @@ console.log("hit get books")
     },
     removeBook: id => {
         return axios.delete(`/api/books/${id}`)
+            
     }
 }

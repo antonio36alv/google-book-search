@@ -1,7 +1,6 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import "./style.css" 
-
-
 
 export default function SearchResult(props) {
 
@@ -15,12 +14,12 @@ export default function SearchResult(props) {
                 <p>Written by:{props.authors}</p>
             </div>
             <div className="btn-div">
-                <button><a href={props.infoLink}>View</a></button>
+                <button><Link to={props.infoLink}>View</Link></button>
                 <button onClick={() => props.handleSave(props.id)}>Save</button>
             </div>
         </div>
         <div className="bottom-half-div">
-            <img className="idk" alt={props.title} src={props.imageLink}/>
+            <img className="idk" alt={`${props.title}`} src={props.imageLink}/>
             <div className="description-div">
                 <p>{props.description}</p></div>
             </div>

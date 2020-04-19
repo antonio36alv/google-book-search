@@ -1,7 +1,7 @@
 import React from "react"
-import "./style.css"
+import "./style.css" 
  
 export default function Saved() {
-
-return <h1>Hello from saved</h1>
+ 
+ return 
 }
