@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import "./style.css"
 import SearchBox from "../../components/SearchBox"
 import SearchResult from "../../components/SearchResult"
-import { getBooks, saveBook } from "../../util/api"
+import { getBooks } from "../../util/api"
  
 class Search extends Component {
 
@@ -17,6 +17,7 @@ class Search extends Component {
         this.setState({ textValue: value })
     }
 
+<<<<<<< HEAD
     handleSave = async id => {
         console.log(id)
         
@@ -44,6 +45,12 @@ class Search extends Component {
         
     //     this.setState({ bookResults: await getBooks(this.state.textValue)})
     // }
+=======
+    handleSearch = async () => {
+        
+        this.setState({ bookResults: await getBooks(this.state.textValue)})
+    }
+>>>>>>> parent of 5ab87a0... properly using callback fucntions for axios call
 
     // componentDidMount = async () => {
     //     this.setState({ textValue: "lord+of+the+flies"})

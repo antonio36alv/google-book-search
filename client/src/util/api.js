@@ -10,6 +10,7 @@ module.exports = {
 console.log("hit get books")
         const queryURL = `https://www.googleapis.com/books/v1/volumes?q=intitle:${title}&maxResults=4&key=${API_KEY}`
 
+<<<<<<< HEAD
         const data = axios.get(queryURL)
         const { items } = data.data
         
@@ -34,5 +35,38 @@ console.log("hit get books")
     removeBook: id => {
         return axios.delete(`/api/books/${id}`)
             
+=======
+            for (let item of items) bookResults.push({
+                title: item.volumeInfo.title,
+                authors: item.volumeInfo.authors,
+                descritpion: item.description,
+                imageLink: item.volumeInfo.imageLinks.thumbnail,
+                infoLink: item.volumeInfo.infoLink
+            })
+        
+        })
+        return bookResults
+>>>>>>> parent of 5ab87a0... properly using callback fucntions for axios call
     }
 }
+// function getBook(title) {
+//     const queryURL = `https://www.googleapis.com/books/v1/volumes?q=intitle=${title}+maxResults=4/&key=${API_KEY}`
+
+//     axios.get(queryURL).then(data => {
+
+//         console.log(data)
+//         const { items } = data.data
+
+//         for (let item of items) console.log(`${item.volumeInfo.title}
+
+// ${item.volumeInfo.authors}
+
+// ${item.volumeInfo.description}
+
+// ${item.volumeInfo.imageLinks.thumbnail}
+
+// ${item.volumeInfo.infoLink}`)
+// })
+// }
+
+// getBook("the+mist")
