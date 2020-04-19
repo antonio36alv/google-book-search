@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const express = require("express")
 
 const mongoose = require("mongoose")
@@ -18,5 +17,3 @@ require("./routes/mongo-routes")(app)
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", { useNewUrlParser: true})
 
 app.listen(PORT, () => console.log(`Listening on Port:${PORT}`))
-=======
->>>>>>> parent of db151a8... basic functionallity
