@@ -11,6 +11,7 @@ console.log("hit get books")
         const queryURL = `https://www.googleapis.com/books/v1/volumes?q=intitle:${title}&maxResults=4&key=${API_KEY}`
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         const data = axios.get(queryURL)
         const { items } = data.data
         
@@ -35,6 +36,18 @@ console.log("hit get books")
     removeBook: id => {
         return axios.delete(`/api/books/${id}`)
             
+=======
+            for (let item of items) bookResults.push({
+                title: item.volumeInfo.title,
+                authors: item.volumeInfo.authors,
+                descritpion: item.description,
+                imageLink: item.volumeInfo.imageLinks.thumbnail,
+                infoLink: item.volumeInfo.infoLink
+            })
+        
+        })
+        return bookResults
+>>>>>>> parent of 5ab87a0... properly using callback fucntions for axios call
 =======
             for (let item of items) bookResults.push({
                 title: item.volumeInfo.title,

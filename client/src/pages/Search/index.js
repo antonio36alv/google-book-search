@@ -18,6 +18,7 @@ class Search extends Component {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     handleSave = async id => {
         console.log(id)
         
@@ -45,6 +46,12 @@ class Search extends Component {
         
     //     this.setState({ bookResults: await getBooks(this.state.textValue)})
     // }
+=======
+    handleSearch = async () => {
+        
+        this.setState({ bookResults: await getBooks(this.state.textValue)})
+    }
+>>>>>>> parent of 5ab87a0... properly using callback fucntions for axios call
 =======
     handleSearch = async () => {
         
