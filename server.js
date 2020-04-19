@@ -1,4 +1,6 @@
 const express = require("express")
+
+const mongoose = require("mongoose")
 const app = express()
 
 const PORT = process.env.PORT || 3001
@@ -10,9 +12,8 @@ if(process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"))
 }
 
-require("./routes/html-routes")(app)
 require("./routes/mongo-routes")(app)
 
-app.listen(PORT, () => console.log(`Listening on Port:${PORT}`))
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", { useNewUrlParser: true})
 
-module.exports = app
+app.listen(PORT, () => console.log(`Listening on Port:${PORT}`))

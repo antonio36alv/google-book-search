@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import "./style.css"
 import SearchBox from "../../components/SearchBox"
 import SearchResult from "../../components/SearchResult"
-import { getBooks } from "../../util/api"
+import { getBooks, saveBook } from "../../util/api"
  
 class Search extends Component {
 
@@ -12,14 +12,11 @@ class Search extends Component {
     }
 
     updateValue = async e => {
+        
         const value = await e.target.value
-        // value !== "" ? this.setState({ textValue: value }) : this.setState({ textValue: this.state.textValue.substring(0, value.length)})
         this.setState({ textValue: value })
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     handleSave = async id => {
         console.log(id)
         
@@ -36,7 +33,6 @@ class Search extends Component {
             //         imageLink: item.volumeInfo.imageLinks.thumbnail,
             //         infoLink: item.volumeInfo.infoLink
             //     })
-
     }
 
     handleSearch = async () => {
@@ -46,30 +42,8 @@ class Search extends Component {
     // handleSearch = async () => {
         
     //     this.setState({ bookResults: await getBooks(this.state.textValue)})
-    // }
-=======
-    handleSearch = async () => {
-        
-        this.setState({ bookResults: await getBooks(this.state.textValue)})
-    }
->>>>>>> parent of 5ab87a0... properly using callback fucntions for axios call
-=======
-    handleSearch = async () => {
-        
-        this.setState({ bookResults: await getBooks(this.state.textValue)})
-    }
->>>>>>> parent of 5ab87a0... properly using callback fucntions for axios call
-=======
-    handleSearch = async () => {
-        
-        this.setState({ bookResults: await getBooks(this.state.textValue)})
-    }
->>>>>>> parent of 5ab87a0... properly using callback fucntions for axios call
-
-    // componentDidMount = async () => {
-    //     this.setState({ textValue: "lord+of+the+flies"})
-    //     await this.handleSearch()
-    // }
+    // }    
+    
     
     render = () => {
         
@@ -77,7 +51,7 @@ class Search extends Component {
         <SearchBox value={this.state.textValue} updateValue={this.updateValue} handleSearch={this.handleSearch} />
             <main>
                 <div>
-                {this.state.bookResults.length > 0 ? this.state.bookResults.map( book => <SearchResult key={book.id} id={book.id} title={book.title} authors={book.authors} description={book.description} imageLink={book.imageLink} infoLink={book.infoLink} />) : <h2>Search!</h2>}
+                {this.state.bookResults.length > 0 ? this.state.bookResults.map( book => <SearchResult key={book.id} id={book.id} title={book.title} authors={book.authors} description={book.description} imageLink={book.imageLink} infoLink={book.infoLink} handleSave={this.handleSave}/>) : <h2>Search!</h2>}
                 </div>
             </main>
         </>
