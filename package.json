@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/antonio36alv/google-book-search/issues"
   },
-  "homepage": "https://github.com/antonio36alv/google-book-search#readme"
+  "homepage": "https://github.com/antonio36alv/google-book-search#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
 }
